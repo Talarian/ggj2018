@@ -225,9 +225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3751bb5f25cedad438898a8655a124fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockX: 1
-  lockY: 1
-  lockZ: 1
 --- !u!1 &703673974
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,6 +877,42 @@ MonoBehaviour:
   normaliseMin: 0
   normaliseMax: 1
   normaliseBlend: 1
+--- !u!1 &1999500108 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1088250330969926, guid: f784063552d83e148b6be5e172afc5f9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1421691510}
+--- !u!114 &1999500114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1999500108}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f90cd3dff80ff84ca37216bfe2756bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bleeding: 0.81
+  _fringing: 0.205
+  _scanline: 0.5
+  _shader: {fileID: 4800000, guid: 30c6511fedf271b4d98f894c9a250aea, type: 3}
+--- !u!114 &1999500115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1999500108}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870b9a8f0f82f4f56800cc427bcd1025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scanLineJitter: 0.334
+  _verticalJump: 0
+  _horizontalShake: 0
+  _colorDrift: 0
+  _shader: {fileID: 4800000, guid: da33272284ea24f208f36998880990be, type: 3}
 --- !u!1 &2034065448
 GameObject:
   m_ObjectHideFlags: 0
