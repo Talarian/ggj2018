@@ -7,27 +7,56 @@ namespace UnityStandardAssets.Vehicles.Car
     [RequireComponent(typeof (CarController))]
     public class CarUserControl : MonoBehaviour
     {
-        private CarController m_Car; // the car controller we want to use
-
+        private CarController carController; // the car controller we want to use
+		private float carAcceleration = 0.0f;
+		private float carWheelDirection = 0.0f;
 
         private void Awake()
         {
             // get the car controller
-            m_Car = GetComponent<CarController>();
+            carController = GetComponent<CarController>();
         }
 
 
         private void FixedUpdate()
         {
-            // pass the input to the car!
-            float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            float v = CrossPlatformInputManager.GetAxis("Vertical");
-#if !MOBILE_INPUT
-            float handbrake = CrossPlatformInputManager.GetAxis("Jump");
-            m_Car.Move(h, v, v, handbrake);
-#else
-            m_Car.Move(h, v, v, 0f);
-#endif
+			carController.Move(carWheelDirection, carAcceleration, carAcceleration, 0f);
         }
-    }
+
+		public void Accelerate()
+		{
+			carController.MaxSpeed = 20f;
+			carAcceleration = 1.0f;
+		}
+
+		public void Stop()
+		{
+			carController.MaxSpeed = 0f;
+			carAcceleration = 0.0f;
+		}
+
+		public void Reverse()
+		{
+			carController.MaxSpeed = 20f;
+			carAcceleration = -1.0f;
+		}
+
+		public void WheelsLeft()
+		{
+			carController.MaximumSteerAngle = 25.0f;
+			carWheelDirection = -1.0f;
+		}
+
+		public void WheelsRight()
+		{
+			carController.MaximumSteerAngle = 25.0f;
+			carWheelDirection = 1.0f;
+		}
+
+		public void WheelsForward()
+		{
+			carController.MaximumSteerAngle = 0.0f;
+			carWheelDirection = 0.0f;
+		}
+	}
 }
