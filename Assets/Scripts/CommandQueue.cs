@@ -6,6 +6,13 @@ using UnityStandardAssets.Vehicles.Car;
 
 public class CommandQueue : MonoBehaviour
 {
+	[Serializable]
+	public class Configuration
+	{
+		public float commandDelayInSeconds = 5.0f;
+	}
+	public Configuration configuration = new Configuration();
+
 	private CommandParser commandParser;
 	private CarUserControl carUserControl;
 
@@ -45,7 +52,16 @@ public class CommandQueue : MonoBehaviour
 	{
 		while (waitingCommands.Count > 0)
 		{
-			carUserControl.AcceptCommand(waitingCommands.Dequeue());
+			Command peekCommand = waitingCommands.Peek();
+			var timeDifference = DateTime.Now - peekCommand.timeStamp;
+			if (timeDifference.TotalSeconds > configuration.commandDelayInSeconds)
+			{
+				carUserControl.AcceptCommand(waitingCommands.Dequeue());
+			}
+			else
+			{
+				break;
+			}
 		}
 	}
 }
