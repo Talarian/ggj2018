@@ -1,0 +1,49 @@
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+Obj/
+UnityGenerated/
+Library/
+Build/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+*.svd
+*.userprefs
+/*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+eonaltar_Data/
+UnityPlayer_Symbols.pdb
+eonaltar.exe
+eonaltar-debug_Data/
+eonaltar-debug.exe
+*.bak
+*.bak.meta
+Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll
+Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll.meta
+Assets/Art/Character/_Test.meta
+Assets/Art/Character/_Test
+UnityVS.eonaltar.sln.DotSettings
+xbox/
+eonaltar-handset-debug_Data/
+eonaltar-handset-debug.exe
+Assets/Plugins/Vectrosity.dll.meta
