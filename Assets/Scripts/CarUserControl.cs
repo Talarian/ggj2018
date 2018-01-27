@@ -58,5 +58,53 @@ namespace UnityStandardAssets.Vehicles.Car
 			carController.MaximumSteerAngle = 0.0f;
 			carWheelDirection = 0.0f;
 		}
+
+		public void AcceptCommand(Command command)
+		{
+			switch (command.commandType)
+			{
+				case Command.CommandType.Velocity:
+					HandleVelocityCommand(command);
+					break;
+				case Command.CommandType.Wheels:
+					HandleWheelCommand(command);
+					break;
+				case Command.CommandType.Sensors:
+					//HandleSensorCommand(command);
+					break;
+			}
+		}
+
+		private void HandleWheelCommand(Command command)
+		{
+			if (command.commandValue == 0.0f)
+			{
+				WheelsForward();
+			}
+			else if (command.commandValue < 0.0f)
+			{
+				WheelsLeft();
+			}
+			else if (command.commandValue > 0.0f)
+			{
+				WheelsRight();
+			}
+		}
+
+		private void HandleVelocityCommand(Command command)
+		{
+			if (command.commandValue == 0.0f)
+			{
+				Stop();
+			}
+			else if (command.commandValue < 0.0f)
+			{
+				Reverse();
+			}
+			else if (command.commandValue > 0.0f)
+			{
+				Accelerate();
+			}
+		}
 	}
 }
