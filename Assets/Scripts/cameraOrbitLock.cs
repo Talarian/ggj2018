@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class cameraOrbitLock : MonoBehaviour {
 
-    private Quaternion initialRotation = Quaternion.identity;
-    public bool lockX = false;
-    public bool lockY = false;
-    public bool lockZ = false;
+    private Vector3 initialRotation = new Vector3(0,0,0);
 
 	// Use this for initialization
 	void Start ()
     {
-        initialRotation = transform.rotation;
+        initialRotation = transform.eulerAngles;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        float x = lockX == true ? initialRotation.eulerAngles.x : transform.rotation.eulerAngles.x;
-        float y = lockY == true ? initialRotation.eulerAngles.y : transform.rotation.eulerAngles.y;
-        float z = lockY == true ? initialRotation.eulerAngles.z : transform.rotation.eulerAngles.z;
+        transform.rotation = Quaternion.Euler(initialRotation.x, transform.rotation.eulerAngles.y, initialRotation.y);
 	}
 }
