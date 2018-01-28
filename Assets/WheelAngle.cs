@@ -14,8 +14,6 @@ public class WheelAngle : MonoBehaviour {
 
     public Configuration configuration;
 
-    private List<GameObject> pings = new List<GameObject>();
-
     private void Start() {
 
         
@@ -34,7 +32,7 @@ public class WheelAngle : MonoBehaviour {
         InfoData data = obj as InfoData;
         Debug.Assert(data != null);
 
-        rectTransform.rotation = Quaternion.Euler(0, 0, data.WheelAngle-180);
+        rectTransform.rotation = Quaternion.Euler(0, 0, (data.WheelAngle-180)*-1);
         ind.DoFlashing();
     }
 

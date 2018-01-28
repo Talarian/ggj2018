@@ -12,7 +12,7 @@ public class AngleUpdate : MonoBehaviour {
 
     public Configuration configuration;
 
-    private List<GameObject> pings = new List<GameObject>();
+
 
     private void Start() {
 

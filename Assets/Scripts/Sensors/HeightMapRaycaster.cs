@@ -19,8 +19,8 @@ public class HeightMapRaycaster : Sensor {
         // calculate top corner
         Vector3 topLeftCorner = transform.position;
         topLeftCorner += (50 * Vector3.up);
-        topLeftCorner += (((radar.height) * radar.distance * 0.5f) * Vector3.forward);
-        topLeftCorner += (((radar.width) * radar.distance * 0.5f) * Vector3.left);
+        topLeftCorner += (((radar.height - 1) * radar.distance * 0.5f) * Vector3.forward);
+        topLeftCorner += (((radar.width - 1) * radar.distance * 0.5f) * Vector3.left);
 
         for (int h = 0; h < radar.height; h++) {
             for (int w = 0; w < radar.width; w++) {

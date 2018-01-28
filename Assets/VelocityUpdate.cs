@@ -12,7 +12,7 @@ public class VelocityUpdate : MonoBehaviour {
 
     public Configuration configuration;
 
-    private List<GameObject> pings = new List<GameObject>();
+
 
     private void Start() {
 
