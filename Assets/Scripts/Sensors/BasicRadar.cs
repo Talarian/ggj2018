@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,6 +25,11 @@ public class BasicRadar : Sensor
 	{
 		RadarData data = new RadarData();
 		data.pings = Ping();
+        data.compassDirection = getCompassDirection();
 		AddSensorData(data);
 	}
+
+    private Quaternion getCompassDirection() {
+        return Quaternion.Euler(0, 0, transform.rotation.eulerAngles.y);
+    }
 }
