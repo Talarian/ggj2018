@@ -38,8 +38,8 @@ public class HeightmapDisplay : MonoBehaviour
         float tempFloat = 0.0f;
         int tempInt = 0;
 
-        for(int i = 0; i < heightMap.GetLength(1); i++) {
-            for(int j = 0; j < heightMap.GetLength(0); j++) {
+        for(int i = 0; i < heightMap.GetLength(0); i++) {
+            for(int j = 0; j < heightMap.GetLength(1); j++) {
                 tempFloat = heightMap[i, j] * -1;
                 tempFloat += 5;
                 tempInt = Mathf.RoundToInt(tempFloat);
