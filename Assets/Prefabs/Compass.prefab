@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 224513859022473744}
   - component: {fileID: 222766807476131738}
   - component: {fileID: 114649524257253368}
-  - component: {fileID: 114473991998781686}
   - component: {fileID: 114932840280053452}
   m_Layer: 5
   m_Name: Compass
@@ -47,20 +46,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114473991998781686
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1193288548384944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e008cac209e1d50409b50e145cb3bc34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  configuration:
-    radar: {fileID: 0}
-  arrow: {fileID: 224513859022473744}
 --- !u!114 &114649524257253368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,6 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   configuration:
     radar: {fileID: 0}
+    pingPrefab: {fileID: 1068511233799306, guid: 0d88be723a98a0f47965ffc3590669fb,
+      type: 2}
+    radarRadius: 130
   arrow: {fileID: 224054309971510612}
 --- !u!222 &222766807476131738
 CanvasRenderer:
@@ -165,8 +153,8 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1193288548384944}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 289, y: -183, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 285, y: -198, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224054309971510612}
@@ -175,6 +163,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 289, y: -183}
+  m_AnchoredPosition: {x: 285, y: -198}
   m_SizeDelta: {x: 283, y: 283}
   m_Pivot: {x: 0.5, y: 0.5}
