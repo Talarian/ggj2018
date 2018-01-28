@@ -19,15 +19,15 @@ public class HeightMapRaycaster : Sensor {
         // calculate top corner
         Vector3 topLeftCorner = transform.position;
         topLeftCorner += (50 * Vector3.up);
-        topLeftCorner += (((radar.height / 2) * radar.distance) * Vector3.forward);
-        topLeftCorner += (((radar.width / 2) * radar.distance) * Vector3.left);
+        topLeftCorner += (((radar.height) * radar.distance * 0.5f) * Vector3.forward);
+        topLeftCorner += (((radar.width) * radar.distance * 0.5f) * Vector3.left);
 
         for (int h = 0; h < radar.height; h++) {
             for (int w = 0; w < radar.width; w++) {
                 RaycastHit hit;
                 Physics.Raycast(new Vector3(topLeftCorner.x + (w * radar.distance),
                                             topLeftCorner.y,
-                                            topLeftCorner.z + (h * radar.distance)),
+                                            topLeftCorner.z - (h * radar.distance)),
                                     Vector3.down,
                                     out hit);
 
