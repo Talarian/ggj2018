@@ -1861,6 +1861,7 @@ GameObject:
   - component: {fileID: 114546764210811398}
   - component: {fileID: 114550705077656212}
   - component: {fileID: 114422905350594084}
+  - component: {fileID: 114908106304753060}
   m_Layer: 9
   m_Name: Sensors
   m_TagString: Untagged
@@ -8300,6 +8301,7 @@ MonoBehaviour:
     - {fileID: 114550705077656212}
     - {fileID: 114150774546315856}
     - {fileID: 114422905350594084}
+    - {fileID: 114908106304753060}
 --- !u!114 &114280630662107146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8444,6 +8446,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3751bb5f25cedad438898a8655a124fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114908106304753060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1874301472781806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffeef5b8be444ae48bbd2159319b29ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114912531892747646

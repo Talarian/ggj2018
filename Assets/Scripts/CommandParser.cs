@@ -107,6 +107,10 @@ public class CommandParser : MonoBehaviour
 				command.commandType = Command.CommandType.Sensors;
 				command.commandValue = 4.0f;
 				break;
+			case "col":
+				command.commandType = Command.CommandType.Sensors;
+				command.commandValue = 5.0f;
+				break;
 			case "clr":
 				CommandOutputTextbox textbox = FindObjectOfType<CommandOutputTextbox>();
 				if (textbox != null)

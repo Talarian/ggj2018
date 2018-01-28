@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 114992582442701528}
   - component: {fileID: 114422690041961054}
   - component: {fileID: 114708634401301298}
+  - component: {fileID: 114682562149688674}
+  - component: {fileID: 114632775057085494}
   m_Layer: 0
   m_Name: CommandParser
   m_TagString: Untagged
@@ -57,6 +59,31 @@ MonoBehaviour:
   configuration:
     monitorUI: {fileID: 0}
     timeToShutdown: 3
+--- !u!114 &114632775057085494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1491773103329450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8989b3aebfc5845418c0f76e6b9e9a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114682562149688674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1491773103329450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd64f8fe1f37d54cb8f1396aaa74bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  configuration:
+    distanceToGrab: 10
+  HasCollected: 0
 --- !u!114 &114708634401301298
 MonoBehaviour:
   m_ObjectHideFlags: 1
