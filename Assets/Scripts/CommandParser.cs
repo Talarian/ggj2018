@@ -165,6 +165,7 @@ public class CommandParser : MonoBehaviour
 						textbox3.AddLine(helpStrings[12]);
                         textbox3.AddLine(helpStrings[13]);
                         textbox3.AddLine(helpStrings[14]);
+                        textbox3.AddLine(helpStrings[15]);
                     }
 					command.localOnly = true;
 				}
@@ -310,6 +311,7 @@ public class CommandParser : MonoBehaviour
 		"help3 for more.",
 		"clr: Clears the console.",
         "reboot: Reboots the Rover application.",
-		"shtdwn: Quits the Rover application."
+		"shtdwn: Quits the Rover application.",
+        "col: Collects nearby samples"
 	};
 }
