@@ -180,7 +180,7 @@ public class CommandParser : MonoBehaviour
 
     private bool ParseSpeed(List<string>.Enumerator arguments, Command command) {
         if (!arguments.MoveNext()) {
-            command.commandValue = 20.0f;
+            command.commandValue = 3.0f;
             return true;
         }
 
@@ -206,6 +206,11 @@ public class CommandParser : MonoBehaviour
 
         try {
             float value = Int32.Parse(commandValue);
+            if(value < -60) {
+                command.commandValue = -60;
+            } else if(value > 60) {
+                command.commandValue = 60;
+            }
             command.commandValue = value;
         } catch(Exception) {
             switch (commandValue) {
