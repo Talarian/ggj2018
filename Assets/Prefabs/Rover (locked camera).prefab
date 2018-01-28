@@ -1905,7 +1905,7 @@ GameObject:
   - component: {fileID: 114553763749888784}
   - component: {fileID: 114039015947091460}
   m_Layer: 0
-  m_Name: Rover 1
+  m_Name: Rover (locked camera)
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
