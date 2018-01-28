@@ -61,4 +61,10 @@ public class CommandOutputTextbox : MonoBehaviour
 
 		textBox.text = richString;
 	}
+
+	public void Clear()
+	{
+		lines.Clear();
+		UpdateText();
+	}
 }
