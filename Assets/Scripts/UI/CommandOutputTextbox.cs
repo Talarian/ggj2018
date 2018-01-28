@@ -38,7 +38,7 @@ public class CommandOutputTextbox : MonoBehaviour
 	{
 		lines.Add(line);
 
-		if (lines.Count > 30)
+		if (lines.Count > 23)
 		{
 			lines.RemoveAt(0);
 		}
