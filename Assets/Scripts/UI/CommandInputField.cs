@@ -28,9 +28,12 @@ public class CommandInputField : MonoBehaviour
 
 	private void OnEndEdit(string arg0)
 	{
-		string echoString = commandParser.ParseCommand(arg0);
-		Debug.Log(echoString);
-		inputField.text = "";
+		if (!string.IsNullOrEmpty(arg0))
+		{
+			string echoString = commandParser.ParseCommand(arg0);
+			Debug.Log(echoString);
+			inputField.text = "";
+		}
 		inputField.ActivateInputField();
 	}
 }
