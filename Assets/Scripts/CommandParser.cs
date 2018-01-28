@@ -98,6 +98,22 @@ public class CommandParser : MonoBehaviour
                 command.commandType = Command.CommandType.Sensors;
                 command.commandValue = 4.0f;
                 break;
+			case "clr":
+				CommandOutputTextbox textbox = FindObjectOfType<CommandOutputTextbox>();
+				if (textbox != null)
+				{
+					textbox.Clear();
+				}
+				break;
+			case "shutdown":
+			case "quit":
+			case "shtdwn":
+				ShutdownController controller = FindObjectOfType<ShutdownController>();
+				if (controller != null)
+				{
+					controller.Shutdown();
+				}
+				break;
 			default:
 				return "Could not parse command: " + argument;
 		}
@@ -139,7 +155,7 @@ public class CommandParser : MonoBehaviour
         try {
             float value = Int32.Parse(commandValue);
             command.commandValue = value;
-        } catch(Exception e) {
+        } catch(Exception) {
             switch (commandValue) {
                 case "lft":
                     command.commandValue = -25.0f;
