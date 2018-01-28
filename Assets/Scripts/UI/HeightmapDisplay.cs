@@ -43,7 +43,12 @@ public class HeightmapDisplay : MonoBehaviour
                 tempFloat = heightMap[i, j] * -1;
                 tempFloat += 5;
                 tempInt = Mathf.RoundToInt(tempFloat);
-                if((tempInt < 0) || (tempInt > 9)) {
+                int middlew = heightMap.GetLength(1) / 2;
+                int middleh = heightMap.GetLength(0) / 2;
+                if (((i == middlew-1) || (i == middlew) || (i == middlew +1)) &&
+                    ((j == middleh-1) || (j == middleh) || (j == middleh +1))){
+                    richText += "<color=\"white\">#";
+                } else if ((tempInt < 0) || (tempInt > 9)) {
                     richText += "<color=\"black\">X";
                 } else {
                     richText += colours[tempInt];
