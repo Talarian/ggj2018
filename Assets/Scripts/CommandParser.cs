@@ -78,6 +78,10 @@ public class CommandParser : MonoBehaviour
 				command.commandType = Command.CommandType.Sensors;
 				command.commandValue = 2.0f;
 				break;
+			case "imglow":
+				command.commandType = Command.CommandType.Sensors;
+				command.commandValue = 3.0f;
+				break;
 			default:
 				return "Could not parse command: " + argument;
 		}
