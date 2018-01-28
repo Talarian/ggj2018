@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class CommandParser : MonoBehaviour
 {
+	public event System.Action<string> OnCommandParseAttempt = delegate { };
+	public event System.Action<string> OnCommandParseError = delegate { };
+
 	private char[] charSeparators = { ' ' };
 
 	private Queue<Command> waitingCommands = new Queue<Command>(4);
@@ -19,17 +22,21 @@ public class CommandParser : MonoBehaviour
 
 	public string ParseCommand(string command)
 	{
+		OnCommandParseAttempt(command);
+
 		List<string> result;
 		result = new List<string>(command.Split(charSeparators));
 
 		if (result.Count == 0)
 		{
+			OnCommandParseError(CreateErrorString(command));
 			return CreateErrorString(command);
 		}
 
 		string errorCode = ParseArgument(result.GetEnumerator());
 		if (!string.IsNullOrEmpty(errorCode))
 		{
+			OnCommandParseError(CreateErrorString(command));
 			return CreateErrorString(errorCode);
 		}
 
@@ -77,6 +84,10 @@ public class CommandParser : MonoBehaviour
 			case "rdr":
 				command.commandType = Command.CommandType.Sensors;
 				command.commandValue = 2.0f;
+				break;
+			case "imglow":
+				command.commandType = Command.CommandType.Sensors;
+				command.commandValue = 3.0f;
 				break;
 			default:
 				return "Could not parse command: " + argument;
