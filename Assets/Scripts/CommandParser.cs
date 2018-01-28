@@ -68,15 +68,15 @@ public class CommandParser : MonoBehaviour
 				break;
 			case "img":
 				command.commandType = Command.CommandType.Sensors;
-				command.commandValue = 1.0f;
+				command.commandValue = 0.0f;
 				break;
 			case "hgtmp":
 				command.commandType = Command.CommandType.Sensors;
-				command.commandValue = 2.0f;
+				command.commandValue = 1.0f;
 				break;
 			case "rdr":
 				command.commandType = Command.CommandType.Sensors;
-				command.commandValue = 3.0f;
+				command.commandValue = 2.0f;
 				break;
 			default:
 				return "Could not parse command: " + argument;

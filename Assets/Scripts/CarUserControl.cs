@@ -7,15 +7,23 @@ namespace UnityStandardAssets.Vehicles.Car
     [RequireComponent(typeof (CarController))]
     public class CarUserControl : MonoBehaviour
     {
-        private CarController carController; // the car controller we want to use
+		private CarController carController; // the car controller we want to use
 		private float carAcceleration = 0.0f;
 		private float carWheelDirection = 0.0f;
 
-        private void Awake()
+		private SensorArray sensorArray;
+
+		private void Awake()
         {
             // get the car controller
             carController = GetComponent<CarController>();
-        }
+
+			sensorArray = FindObjectOfType<SensorArray>();
+			if (sensorArray == null)
+			{
+				Debug.Log("Need a SensorArray");
+			}
+		}
 
 
         private void FixedUpdate()
@@ -70,9 +78,14 @@ namespace UnityStandardAssets.Vehicles.Car
 					HandleWheelCommand(command);
 					break;
 				case Command.CommandType.Sensors:
-					//HandleSensorCommand(command);
+					HandleSensorCommand(command);
 					break;
 			}
+		}
+
+		private void HandleSensorCommand(Command command)
+		{
+			sensorArray.ActivateSensor(Mathf.RoundToInt(command.commandValue));
 		}
 
 		private void HandleWheelCommand(Command command)
