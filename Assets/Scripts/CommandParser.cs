@@ -138,7 +138,8 @@ public class CommandParser : MonoBehaviour
 					textbox2.AddLine(helpStrings[2]);
 					textbox2.AddLine(helpStrings[3]);
 					textbox2.AddLine(helpStrings[4]);
-				}
+                    textbox2.AddLine(helpStrings[5]);
+                }
 				command.localOnly = true;
 				break;
 			case "help2":
@@ -146,13 +147,13 @@ public class CommandParser : MonoBehaviour
 					CommandOutputTextbox textbox3 = FindObjectOfType<CommandOutputTextbox>();
 					if (textbox3 != null)
 					{
-						textbox3.AddLine(helpStrings[5]);
 						textbox3.AddLine(helpStrings[6]);
 						textbox3.AddLine(helpStrings[7]);
 						textbox3.AddLine(helpStrings[8]);
 						textbox3.AddLine(helpStrings[9]);
 						textbox3.AddLine(helpStrings[10]);
-					}
+                        textbox3.AddLine(helpStrings[11]);
+                    }
 					command.localOnly = true;
 				}
 				break;
@@ -161,9 +162,10 @@ public class CommandParser : MonoBehaviour
 					CommandOutputTextbox textbox3 = FindObjectOfType<CommandOutputTextbox>();
 					if (textbox3 != null)
 					{
-						textbox3.AddLine(helpStrings[11]);
 						textbox3.AddLine(helpStrings[12]);
-					}
+                        textbox3.AddLine(helpStrings[13]);
+                        textbox3.AddLine(helpStrings[14]);
+                    }
 					command.localOnly = true;
 				}
 				break;
@@ -274,6 +276,7 @@ public class CommandParser : MonoBehaviour
 
 	private string[] helpStrings = {
 		"fwd [n]: Tells Rover to move forward.",
+        "\t [n] defaults to 3",
 		"rev [n]: Tells Rover to move in reverse.",
 		"halt: Halts the Rover.",
 		"trn [lft|rgt|fwd] [n]: Turns the wheels.",
@@ -285,6 +288,7 @@ public class CommandParser : MonoBehaviour
 		"sts: Requests a status update.",
 		"help3 for more.",
 		"clr: Clears the console.",
+        "reboot: Reboots the Rover application.",
 		"shtdwn: Quits the Rover application."
 	};
 }
