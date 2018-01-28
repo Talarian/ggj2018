@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeightMapRaycaster : MonoBehaviour {
+public class HeightMapRaycaster : Sensor {
     [System.Serializable]
     public class RadarSize {
         public int height;
@@ -12,13 +12,8 @@ public class HeightMapRaycaster : MonoBehaviour {
 
     public RadarSize radar;
 
-    // Use this for initialization
-    void Start() {
-
-    }
-
     // Update is called once per frame
-    public void Cast() {
+    private float[,] Cast() {
         float[,] output = new float[radar.width, radar.height];
 
         // calculate top corner
@@ -39,5 +34,14 @@ public class HeightMapRaycaster : MonoBehaviour {
                 output[w, h] = hit.distance - 50;
             }
         }
-    }
+
+		return output;
+	}
+
+	public override void ActivateSensor()
+	{
+		HeightMapData data = new HeightMapData();
+		data.heightMap = Cast();
+		AddSensorData(data);
+	}
 }
