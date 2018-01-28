@@ -114,6 +114,13 @@ public class CommandParser : MonoBehaviour
 					controller.Shutdown();
 				}
 				break;
+			case "help":
+				CommandOutputTextbox textbox2 = FindObjectOfType<CommandOutputTextbox>();
+				if (textbox2 != null)
+				{
+					textbox2.AddValid(helpString);
+				}
+				break;
 			default:
 				return "Could not parse command: " + argument;
 		}
@@ -135,7 +142,7 @@ public class CommandParser : MonoBehaviour
         try {
             float value = Int32.Parse(arguments.Current);
             command.commandValue = value;
-        } catch (Exception e) {
+        } catch (Exception) {
             return false;
         }
 
@@ -179,4 +186,17 @@ public class CommandParser : MonoBehaviour
 	{
 		return "Invalid Command: " + command;
 	}
+
+	private const string helpString = "Commands:\n" +
+		"fwd [n]: Tells Rover to move forward, n is optional speed.\n" +
+		"rev [n]: Tells Rover to move in reverse, n is optional speed.\n" +
+		"halt: Halts the Rover.\n" +
+		"trn [lft|rgt|fwd] [n]: Turns the Rover's wheels in the direction noted, n is optional degrees.\n" +
+		"img: Instructs the Rover to take a forward camera picture.\n" +
+		"hgtmp: Gets a Satellite Height Map around the Rover.\n" +
+		"rdr: Sends a radar ping from the Rover.\n" +
+		"imglow: Instructs the Rover to take a downward's camera picture.\n" +
+		"sts: Requests a status update from the Rover.\n" +
+		"clr: Clears the console.\n" +
+		"shtdwn: Quits the Rover application.\n";
 }
