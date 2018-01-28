@@ -48,7 +48,7 @@ public class CommandParser : MonoBehaviour
 
 	private string ParseArgument(List<string>.Enumerator arguments, string originalString)
 	{
-        bool statusUpdate = false;
+		bool statusUpdate = false;
 
 		if (!arguments.MoveNext())
 		{
@@ -62,31 +62,31 @@ public class CommandParser : MonoBehaviour
 		{
 			case "fwd":
 				command.commandType = Command.CommandType.Velocity;
-				if(!ParseSpeed(arguments, command)) {
-                    return "could not parse argument for fwd";
-                }
-                statusUpdate = true;
+				if (!ParseSpeed(arguments, command)) {
+					return "could not parse argument for fwd";
+				}
+				statusUpdate = true;
 				break;
 			case "rev":
 				command.commandType = Command.CommandType.Velocity;
-				if(!ParseSpeed(arguments, command)) {
-                    return "could not parse argument for rev";
-                }
-                command.commandValue *= -1;
-                statusUpdate = true;
-                break;
+				if (!ParseSpeed(arguments, command)) {
+					return "could not parse argument for rev";
+				}
+				command.commandValue *= -1;
+				statusUpdate = true;
+				break;
 			case "halt":
 				command.commandType = Command.CommandType.Velocity;
 				command.commandValue = 0.0f;
-                statusUpdate = true;
-                break;
+				statusUpdate = true;
+				break;
 			case "trn":
 				if (!ParseTurn(arguments, command))
 				{
 					return "Could not parse arguments for trn.";
 				}
-                statusUpdate = true;
-                break;
+				statusUpdate = true;
+				break;
 			case "img":
 				command.commandType = Command.CommandType.Sensors;
 				command.commandValue = 0.0f;
@@ -103,10 +103,10 @@ public class CommandParser : MonoBehaviour
 				command.commandType = Command.CommandType.Sensors;
 				command.commandValue = 3.0f;
 				break;
-            case "sts":
-                command.commandType = Command.CommandType.Sensors;
-                command.commandValue = 4.0f;
-                break;
+			case "sts":
+				command.commandType = Command.CommandType.Sensors;
+				command.commandValue = 4.0f;
+				break;
 			case "clr":
 				CommandOutputTextbox textbox = FindObjectOfType<CommandOutputTextbox>();
 				if (textbox != null)
@@ -129,9 +129,39 @@ public class CommandParser : MonoBehaviour
 				CommandOutputTextbox textbox2 = FindObjectOfType<CommandOutputTextbox>();
 				if (textbox2 != null)
 				{
-					textbox2.AddValid(helpString);
+					textbox2.AddLine(helpStrings[0]);
+					textbox2.AddLine(helpStrings[1]);
+					textbox2.AddLine(helpStrings[2]);
+					textbox2.AddLine(helpStrings[3]);
+					textbox2.AddLine(helpStrings[4]);
 				}
 				command.localOnly = true;
+				break;
+			case "help2":
+				{
+					CommandOutputTextbox textbox3 = FindObjectOfType<CommandOutputTextbox>();
+					if (textbox3 != null)
+					{
+						textbox3.AddLine(helpStrings[5]);
+						textbox3.AddLine(helpStrings[6]);
+						textbox3.AddLine(helpStrings[7]);
+						textbox3.AddLine(helpStrings[8]);
+						textbox3.AddLine(helpStrings[9]);
+						textbox3.AddLine(helpStrings[10]);
+					}
+					command.localOnly = true;
+				}
+				break;
+			case "help3":
+				{
+					CommandOutputTextbox textbox3 = FindObjectOfType<CommandOutputTextbox>();
+					if (textbox3 != null)
+					{
+						textbox3.AddLine(helpStrings[11]);
+						textbox3.AddLine(helpStrings[12]);
+					}
+					command.localOnly = true;
+				}
 				break;
 			case "!easy":
 				{
@@ -171,30 +201,30 @@ public class CommandParser : MonoBehaviour
 		command.timeStamp = DateTime.Now;
 		command.originalText = originalString;
 		waitingCommands.Enqueue(command);
-        if (statusUpdate) {
-            ParseCommand("sts", true);
-        }
+		if (statusUpdate) {
+			ParseCommand("sts", true);
+		}
 
 		return null; // No errorcode
 	}
 
-    private bool ParseSpeed(List<string>.Enumerator arguments, Command command) {
-        if (!arguments.MoveNext()) {
-            command.commandValue = 3.0f;
-            return true;
-        }
+	private bool ParseSpeed(List<string>.Enumerator arguments, Command command) {
+		if (!arguments.MoveNext()) {
+			command.commandValue = 20.0f;
+			return true;
+		}
 
-        try {
-            float value = Int32.Parse(arguments.Current);
-            command.commandValue = value;
-        } catch (Exception) {
-            return false;
-        }
+		try {
+			float value = Int32.Parse(arguments.Current);
+			command.commandValue = value;
+		} catch (Exception) {
+			return false;
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    private bool ParseTurn(List<string>.Enumerator arguments, Command command)
+	private bool ParseTurn(List<string>.Enumerator arguments, Command command)
 	{
 		command.commandType = Command.CommandType.Wheels;
 		if (!arguments.MoveNext())
@@ -204,29 +234,24 @@ public class CommandParser : MonoBehaviour
 		string commandValue = arguments.Current;
 
 
-        try {
-            float value = Int32.Parse(commandValue);
-            if(value < -60) {
-                command.commandValue = -60;
-            } else if(value > 60) {
-                command.commandValue = 60;
-            }
-            command.commandValue = value;
-        } catch(Exception) {
-            switch (commandValue) {
-                case "lft":
-                    command.commandValue = -25.0f;
-                    break;
-                case "rgt":
-                    command.commandValue = 25.0f;
-                    break;
-                case "fwd":
-                    command.commandValue = 0.0f;
-                    break;
-                default:
-                    return false;
-            }
-        }
+		try {
+			float value = Int32.Parse(commandValue);
+			command.commandValue = value;
+		} catch (Exception) {
+			switch (commandValue) {
+				case "lft":
+					command.commandValue = -25.0f;
+					break;
+				case "rgt":
+					command.commandValue = 25.0f;
+					break;
+				case "fwd":
+					command.commandValue = 0.0f;
+					break;
+				default:
+					return false;
+			}
+		}
 
 
 		return true;
@@ -237,16 +262,19 @@ public class CommandParser : MonoBehaviour
 		return "Invalid Command: " + command;
 	}
 
-	private const string helpString = "Commands:\n" +
-		"fwd [n]: Tells Rover to move forward, n is optional speed.\n" +
-		"rev [n]: Tells Rover to move in reverse, n is optional speed.\n" +
-		"halt: Halts the Rover.\n" +
-		"trn [lft|rgt|fwd] [n]: Turns the Rover's wheels in the direction noted, n is optional degrees.\n" +
-		"img: Instructs the Rover to take a forward camera picture.\n" +
-		"hgtmp: Gets a Satellite Height Map around the Rover.\n" +
-		"rdr: Sends a radar ping from the Rover.\n" +
-		"imglow: Instructs the Rover to take a downward's camera picture.\n" +
-		"sts: Requests a status update from the Rover.\n" +
-		"clr: Clears the console.\n" +
-		"shtdwn: Quits the Rover application.\n";
+	private string[] helpStrings = {
+		"fwd [n]: Tells Rover to move forward.",
+		"rev [n]: Tells Rover to move in reverse.",
+		"halt: Halts the Rover.",
+		"trn [lft|rgt|fwd] [n]: Turns the wheels.",
+		"help2 for more.",
+		"img: Instructs the Rover to take a picture.",
+		"hgtmp: Gets a Satellite Height Map.",
+		"rdr: Sends a radar ping from the Rover.",
+		"imglow: A picture pointing down.",
+		"sts: Requests a status update.",
+		"help3 for more.",
+		"clr: Clears the console.",
+		"shtdwn: Quits the Rover application."
+	};
 }
