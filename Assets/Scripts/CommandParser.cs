@@ -99,7 +99,7 @@ public class CommandParser : MonoBehaviour
 				command.commandType = Command.CommandType.Sensors;
 				command.commandValue = 2.0f;
 				break;
-			case "imglow":
+			case "img2":
 				command.commandType = Command.CommandType.Sensors;
 				command.commandValue = 3.0f;
 				break;
@@ -281,7 +281,7 @@ public class CommandParser : MonoBehaviour
 		"img: Instructs the Rover to take a picture.",
 		"hgtmp: Gets a Satellite Height Map.",
 		"rdr: Sends a radar ping from the Rover.",
-		"imglow: A picture pointing down.",
+		"img2: A gyro stable camera.",
 		"sts: Requests a status update.",
 		"help3 for more.",
 		"clr: Clears the console.",
