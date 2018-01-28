@@ -8,6 +8,7 @@ public class SampleCollectorReceiver : MonoBehaviour
 	public class Configuration
 	{
 		public float distanceToGrab = 10f;
+		public Indicator uiElement;
 	}
 	public Configuration configuration = new Configuration();
 
@@ -43,7 +44,7 @@ public class SampleCollectorReceiver : MonoBehaviour
 				}
 				else
 				{
-					// Show UI
+					configuration.uiElement.DoFlashing();
 					transmitter.SetActive(false);
 					HasCollected = true;
 				}
