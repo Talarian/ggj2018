@@ -81,6 +81,10 @@ ModelImporter:
     100146: terminal3
     100148: terminal4
     100150: terminal5
+    100152: polySurface1
+    100154: polySurface2
+    100156: polySurface3
+    100158: transform1
     400000: body
     400002: body 1
     400004: body 2
@@ -157,6 +161,10 @@ ModelImporter:
     400146: terminal3
     400148: terminal4
     400150: terminal5
+    400152: polySurface1
+    400154: polySurface2
+    400156: polySurface3
+    400158: transform1
     2100000: Plastic_Gray
     2100002: Plastic_Red
     2100004: blinn6
@@ -240,6 +248,9 @@ ModelImporter:
     2300132: screws 3
     2300134: screws 4
     2300136: screws 5
+    2300138: polySurface1
+    2300140: polySurface2
+    2300142: polySurface3
     3300000: body
     3300002: body 1
     3300004: body 2
@@ -309,6 +320,9 @@ ModelImporter:
     3300132: screws 3
     3300134: screws 4
     3300136: screws 5
+    3300138: polySurface1
+    3300140: polySurface2
+    3300142: polySurface3
     4300000: buttons
     4300002: monitor
     4300004: screws
@@ -378,6 +392,9 @@ ModelImporter:
     4300132: panel2
     4300134: panel1
     4300136: buttons1
+    4300138: polySurface1
+    4300140: polySurface2
+    4300142: polySurface3
     9500000: //RootNode
   externalObjects:
   - first:
