@@ -7,6 +7,7 @@ using UnityStandardAssets.Vehicles.Car;
 public class CommandQueue : MonoBehaviour
 {
 	public event System.Action<Command> OnCommandQueued = delegate { };
+	public event System.Action<Command> OnCommandDequeued = delegate { };
 
 	[Serializable]
 	public class Configuration
@@ -59,7 +60,9 @@ public class CommandQueue : MonoBehaviour
 			var timeDifference = DateTime.Now - peekCommand.timeStamp;
 			if (timeDifference.TotalSeconds > configuration.commandDelayInSeconds)
 			{
-				carUserControl.AcceptCommand(waitingCommands.Dequeue());
+				Command command = waitingCommands.Dequeue();
+				carUserControl.AcceptCommand(command);
+				OnCommandDequeued(command);
 			}
 			else
 			{

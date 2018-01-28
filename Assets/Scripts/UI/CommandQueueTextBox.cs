@@ -13,14 +13,13 @@ public class CommandQueueTextBox : MonoBehaviour
 	}
 	public Configuration configuration = new Configuration();
 
-	private List<Command> waitingCommands = new List<Command>();
-	private CommandQueue commandQueue;
+	protected List<Command> waitingCommands = new List<Command>();
+	protected CommandQueue commandQueue;
 
-	private void Start()
+	protected virtual void Start()
 	{
 		commandQueue = FindObjectOfType<CommandQueue>();
 		Debug.Assert(commandQueue != null);
-		commandQueue.OnCommandQueued += CommandQueue_OnCommandQueued;
 	}
 
 	private void Update()
@@ -108,10 +107,5 @@ public class CommandQueueTextBox : MonoBehaviour
 
 			progressRichText = string.Concat(progressRichText, progress);
 		}
-	}
-
-	private void CommandQueue_OnCommandQueued(Command obj)
-	{
-		waitingCommands.Add(obj);
 	}
 }
