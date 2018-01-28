@@ -11,8 +11,23 @@ public class AudioInput : MonoBehaviour
     public AudioClip[] negativeSounds;
     public AudioClip[] feedbackSounds;
 
-	// Use this for initialization
-	void Start ()
+    public static AudioInput instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+
+    // Use this for initialization
+    void Start ()
     {
         source = GetComponent<AudioSource>();
     }

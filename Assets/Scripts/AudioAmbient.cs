@@ -10,8 +10,23 @@ public class AudioAmbient : MonoBehaviour
     public AudioClip idleSound;
     public AudioClip shutdownSound;
 
-	// Use this for initialization
-	void Start ()
+    public static AudioAmbient instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+
+    // Use this for initialization
+    void Start ()
     {
         source = GetComponent<AudioSource>();
         source.loop = true;
@@ -24,6 +39,12 @@ public class AudioAmbient : MonoBehaviour
         source.Play();
         yield return new WaitForSeconds(source.clip.length);
         source.clip = idleSound;
+        source.Play();
+    }
+
+    public void PlayPCShutdown()
+    {
+        source.clip = shutdownSound;
         source.Play();
     }
 }

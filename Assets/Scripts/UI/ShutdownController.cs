@@ -6,6 +6,7 @@ public class ShutdownController : MonoBehaviour
 	[System.Serializable]
 	public class Configuration
 	{
+        public GameObject monitorUI;
 		public float timeToShutdown = 3.0f;
 	}
 	public Configuration configuration = new Configuration();
@@ -29,7 +30,16 @@ public class ShutdownController : MonoBehaviour
 
 	public void Shutdown()
 	{
-		// Play Sound
-		shuttingDown = true;
+        if (AudioAmbient.instance != null)
+        {
+            AudioAmbient.instance.PlayPCShutdown();
+            configuration.timeToShutdown = AudioAmbient.instance.shutdownSound.length;
+        }
+
+        if (configuration.monitorUI)
+        {
+            configuration.monitorUI.SetActive(false);
+        }
+        shuttingDown = true;
 	}
 }
