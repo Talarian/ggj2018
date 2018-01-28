@@ -8,8 +8,10 @@ namespace UnityStandardAssets.Vehicles.Car
     public class CarUserControl : MonoBehaviour
     {
 		private CarController carController; // the car controller we want to use
-		private float carAcceleration = 0.0f;
-		private float carWheelDirection = 0.0f;
+        private CarUserControl carUserController;
+
+		public float carAcceleration = 0.0f;
+		public float carWheelDirection = 0.0f;
 
 		private SensorArray sensorArray;
 
@@ -17,6 +19,8 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             // get the car controller
             carController = GetComponent<CarController>();
+            carUserController = GetComponent<CarUserControl>();
+            
 
 			sensorArray = FindObjectOfType<SensorArray>();
 			if (sensorArray == null)

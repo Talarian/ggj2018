@@ -654,7 +654,6 @@ GameObject:
   - component: {fileID: 4145432521329116}
   - component: {fileID: 20187343038945652}
   - component: {fileID: 124441354928320480}
-  - component: {fileID: 81988044843392854}
   - component: {fileID: 114325371200973450}
   - component: {fileID: 114966352979763764}
   m_Layer: 9
@@ -8196,13 +8195,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1466714191886680}
   m_Enabled: 1
---- !u!81 &81988044843392854
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1328440894567460}
-  m_Enabled: 1
 --- !u!95 &95484423090530436
 Animator:
   serializedVersion: 3
@@ -8379,6 +8371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 114020820872552102}
+  userController: {fileID: 114633370462883972}
 --- !u!114 &114434301322653694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8428,6 +8421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96468c245ae8e0d4f8f1c7a7b8b0542e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carAcceleration: 0
+  carWheelDirection: 0
 --- !u!114 &114665817499464258
 MonoBehaviour:
   m_ObjectHideFlags: 1
