@@ -236,7 +236,13 @@ public class CommandParser : MonoBehaviour
 
 		try {
 			float value = Int32.Parse(commandValue);
-			command.commandValue = value;
+            if (value < -60) {
+                command.commandValue = -60;
+            } else if (value > 60) {
+                command.commandValue = 60;
+            } else {
+                command.commandValue = value;
+            }
 		} catch (Exception) {
 			switch (commandValue) {
 				case "lft":
