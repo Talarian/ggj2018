@@ -29,6 +29,6 @@ public class VelocityUpdate : MonoBehaviour {
         InfoData data = obj as InfoData;
         Debug.Assert(data != null);
 
-        dataObject.ChangeValue(data.MaxSpeed.ToString() +"m/s");
+        dataObject.ChangeValue(data.MaxSpeed.ToString() +"kph");
     }
 }
