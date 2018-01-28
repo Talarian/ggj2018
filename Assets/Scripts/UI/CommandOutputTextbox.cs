@@ -34,7 +34,7 @@ public class CommandOutputTextbox : MonoBehaviour
 		AddLine(newLine);
 	}
 
-	private void AddLine(string line)
+	public void AddLine(string line)
 	{
 		lines.Add(line);
 
