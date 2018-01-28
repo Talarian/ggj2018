@@ -654,6 +654,7 @@ MonoBehaviour:
   currentFocus: 0
   halfPoint: 0.7
   didFirstInput: 0
+  maxMove: 1
 --- !u!1 &79420935
 GameObject:
   m_ObjectHideFlags: 0

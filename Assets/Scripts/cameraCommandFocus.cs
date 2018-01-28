@@ -8,6 +8,7 @@ public class cameraCommandFocus : MonoBehaviour
     public float currentFocus;
     public float halfPoint = 0.7f;
     public bool didFirstInput = false;
+    public float maxMove = 0.6f;
 
 	// Use this for initialization
 	void Start ()
@@ -34,7 +35,7 @@ public class cameraCommandFocus : MonoBehaviour
         }
         if (Input.mousePosition.x / Screen.width > halfPoint)
         {
-            animator.SetFloat("focusOnMonitor", 0.6f, 0.25f, Time.deltaTime);
+            animator.SetFloat("focusOnMonitor", maxMove, 0.25f, Time.deltaTime);
         }
     }
 }
