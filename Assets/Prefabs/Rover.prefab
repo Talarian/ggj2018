@@ -1045,6 +1045,7 @@ GameObject:
   - component: {fileID: 124709311996480056}
   - component: {fileID: 114434301322653694}
   - component: {fileID: 114150774546315856}
+  - component: {fileID: 114068964780434716}
   m_Layer: 9
   m_Name: Extra Camera
   m_TagString: MainCamera
@@ -3419,13 +3420,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1469166892264066}
-  m_LocalRotation: {x: -0.5, y: 0.0000076218157, z: -0.0000044004573, w: -0.8660254}
-  m_LocalPosition: {x: 0, y: -0.000345, z: 0.000268}
+  m_LocalRotation: {x: -0.15478945, y: 0.000006989236, z: -0.0000053597882, w: -0.9879475}
+  m_LocalPosition: {x: 0, y: 0.007, z: -0.0313}
   m_LocalScale: {x: 0.01, y: 0.009999998, z: 0.009999999}
   m_Children: []
   m_Father: {fileID: 4747401953218956}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 60, y: 359.999, z: 0}
+  m_LocalEulerAnglesHint: {x: 17.809, y: 359.999, z: 0.001}
 --- !u!4 &4837006258147040
 Transform:
   m_ObjectHideFlags: 1
@@ -8272,6 +8273,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carController: {fileID: 114020820872552102}
+--- !u!114 &114068964780434716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469166892264066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3751bb5f25cedad438898a8655a124fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114150774546315856
 MonoBehaviour:
   m_ObjectHideFlags: 1
