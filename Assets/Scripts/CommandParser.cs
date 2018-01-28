@@ -45,6 +45,8 @@ public class CommandParser : MonoBehaviour
 
 	private string ParseArgument(List<string>.Enumerator arguments, string originalString)
 	{
+        bool statusUpdate = false;
+
 		if (!arguments.MoveNext())
 		{
 			return "Could not parse command: " + arguments.ToString();
@@ -60,6 +62,7 @@ public class CommandParser : MonoBehaviour
 				if(!ParseSpeed(arguments, command)) {
                     return "could not parse argument for fwd";
                 }
+                statusUpdate = true;
 				break;
 			case "rev":
 				command.commandType = Command.CommandType.Velocity;
@@ -67,17 +70,20 @@ public class CommandParser : MonoBehaviour
                     return "could not parse argument for rev";
                 }
                 command.commandValue *= -1;
-				break;
+                statusUpdate = true;
+                break;
 			case "halt":
 				command.commandType = Command.CommandType.Velocity;
 				command.commandValue = 0.0f;
-				break;
+                statusUpdate = true;
+                break;
 			case "trn":
 				if (!ParseTurn(arguments, command))
 				{
 					return "Could not parse arguments for trn.";
 				}
-				break;
+                statusUpdate = true;
+                break;
 			case "img":
 				command.commandType = Command.CommandType.Sensors;
 				command.commandValue = 0.0f;
@@ -129,6 +135,9 @@ public class CommandParser : MonoBehaviour
 		command.timeStamp = DateTime.Now;
 		command.originalText = originalString;
 		waitingCommands.Enqueue(command);
+        if (statusUpdate) {
+            ParseCommand("sts");
+        }
 
 		return null; // No errorcode
 	}
