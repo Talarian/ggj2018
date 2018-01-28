@@ -122,12 +122,24 @@ public class CommandParser : MonoBehaviour
 			case "shutdown":
 			case "quit":
 			case "shtdwn":
-				ShutdownController controller = FindObjectOfType<ShutdownController>();
-				if (controller != null)
 				{
-					controller.Shutdown();
+					ShutdownController controller = FindObjectOfType<ShutdownController>();
+					if (controller != null)
+					{
+						controller.Shutdown();
+					}
+					command.localOnly = true;
 				}
-				command.localOnly = true;
+				break;
+			case "reboot":
+				{
+					ShutdownController controller = FindObjectOfType<ShutdownController>();
+					if (controller != null)
+					{
+						controller.Reboot();
+					}
+					command.localOnly = true;
+				}
 				break;
 			case "help":
 				CommandOutputTextbox textbox2 = FindObjectOfType<CommandOutputTextbox>();
