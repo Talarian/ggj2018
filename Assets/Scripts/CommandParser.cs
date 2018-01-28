@@ -20,9 +20,12 @@ public class CommandParser : MonoBehaviour
 		return sendQueue;
 	}
 
-	public string ParseCommand(string command)
+	public string ParseCommand(string command, bool silent = false)
 	{
-		OnCommandParseAttempt(command);
+		if (!silent)
+		{
+			OnCommandParseAttempt(command);
+		}
 
 		List<string> result;
 		result = new List<string>(command.Split(charSeparators));
@@ -110,6 +113,7 @@ public class CommandParser : MonoBehaviour
 				{
 					textbox.Clear();
 				}
+				command.localOnly = true;
 				break;
 			case "shutdown":
 			case "quit":
@@ -119,6 +123,7 @@ public class CommandParser : MonoBehaviour
 				{
 					controller.Shutdown();
 				}
+				command.localOnly = true;
 				break;
 			case "help":
 				CommandOutputTextbox textbox2 = FindObjectOfType<CommandOutputTextbox>();
@@ -126,7 +131,38 @@ public class CommandParser : MonoBehaviour
 				{
 					textbox2.AddValid(helpString);
 				}
+				command.localOnly = true;
 				break;
+			case "!easy":
+				{
+					GameSettingsManager manager = FindObjectOfType<GameSettingsManager>();
+					if (manager != null)
+					{
+						manager.SetEasy();
+					}
+					command.localOnly = true;
+					break;
+				}
+			case "!normal":
+				{
+					GameSettingsManager manager = FindObjectOfType<GameSettingsManager>();
+					if (manager != null)
+					{
+						manager.SetNormal();
+					}
+					command.localOnly = true;
+					break;
+				}
+			case "!hard":
+				{
+					GameSettingsManager manager = FindObjectOfType<GameSettingsManager>();
+					if (manager != null)
+					{
+						manager.SetMars();
+					}
+					command.localOnly = true;
+					break;
+				}
 			default:
 				return "Could not parse command: " + argument;
 		}
@@ -136,7 +172,7 @@ public class CommandParser : MonoBehaviour
 		command.originalText = originalString;
 		waitingCommands.Enqueue(command);
         if (statusUpdate) {
-            ParseCommand("sts");
+            ParseCommand("sts", true);
         }
 
 		return null; // No errorcode

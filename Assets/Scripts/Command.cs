@@ -15,4 +15,5 @@ public class Command
 	public float commandValue;
 	public DateTime timeStamp;
 	public string originalText;
+	public bool localOnly;
 }

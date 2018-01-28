@@ -10,7 +10,10 @@ public class CommandQueueTextboxUpload : CommandQueueTextBox
 
 	private void CommandQueue_OnCommandQueued(Command obj)
 	{
-		waitingCommands.Add(obj);
+		if (!obj.localOnly)
+		{
+			waitingCommands.Add(obj);
+		}
 	}
 }
 

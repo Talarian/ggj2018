@@ -35,7 +35,7 @@ public class CommandQueueTextBox : MonoBehaviour
 		while (waitingCommands.Count > 0)
 		{
 			var difference = now - waitingCommands[0].timeStamp;
-			if (difference.TotalSeconds > commandQueue.configuration.commandDelayInSeconds + 5f)
+			if (difference.TotalSeconds > commandQueue.configuration.commandDelayInSeconds + 2f)
 			{
 				waitingCommands.RemoveAt(0);
 			}
