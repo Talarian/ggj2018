@@ -15,6 +15,6 @@ public class cameraOrbitLock : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        transform.rotation = Quaternion.Euler(initialRotation.x, transform.rotation.eulerAngles.y, initialRotation.y);
+        transform.rotation = Quaternion.Euler(initialRotation.x, transform.rotation.eulerAngles.y, initialRotation.z);
 	}
 }
