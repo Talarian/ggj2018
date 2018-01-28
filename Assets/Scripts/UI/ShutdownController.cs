@@ -24,7 +24,7 @@ public class ShutdownController : MonoBehaviour
 		if (timeSinceShutdownRequest >= configuration.timeToShutdown)
 		{
 			Debug.Log("Shutting Down");
-			Application.Quit();
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Title");
 		}
 	}
 

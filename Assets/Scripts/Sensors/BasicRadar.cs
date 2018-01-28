@@ -30,6 +30,6 @@ public class BasicRadar : Sensor
 	}
 
     private Quaternion getCompassDirection() {
-        return Quaternion.Euler(0, 0, transform.rotation.eulerAngles.y);
+        return Quaternion.Euler(0, 0, transform.rotation.eulerAngles.y * -1);
     }
 }

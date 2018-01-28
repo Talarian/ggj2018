@@ -653,6 +653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFocus: 0
   halfPoint: 0.7
+  didFirstInput: 0
 --- !u!1 &79420935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,6 +1996,10 @@ Prefab:
     - target: {fileID: 100000, guid: ab5a211bc15616643936c73a6741add1, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400122, guid: ab5a211bc15616643936c73a6741add1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50.388546
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab5a211bc15616643936c73a6741add1, type: 3}
