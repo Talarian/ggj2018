@@ -1,16 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
-public class WheelAngle : MonoBehaviour {
+public class AngleUpdate : MonoBehaviour {
 
     [System.Serializable]
     public class Configuration {
         public InfoPacket info;
     }
-    private RectTransform rectTransform;
-    private Indicator ind;
+    private DataObject dataObject;
 
     public Configuration configuration;
 
@@ -18,24 +16,19 @@ public class WheelAngle : MonoBehaviour {
 
     private void Start() {
 
-        
-        rectTransform = GetComponent<RectTransform>();
-        ind = GetComponent<Indicator>();
 
-        Debug.Assert(rectTransform != null, "wheel info rectTransform");
-        Debug.Assert(ind != null, "wheel info needs an indicator");
+        dataObject = GetComponent<DataObject>();
+
+        Debug.Assert(dataObject != null, "wheel info rectTransform");
         Debug.Assert(configuration.info != null, "HeightmapDisplay requires a heightmap sensor");
 
         configuration.info.OnSensorDataAvailable += Info_OnSensorDataAvailable;
-
     }
 
     private void Info_OnSensorDataAvailable(SensorData obj) {
         InfoData data = obj as InfoData;
         Debug.Assert(data != null);
 
-        rectTransform.rotation = Quaternion.Euler(0, 0, data.WheelAngle-180);
-        ind.DoFlashing();
+        dataObject.ChangeValue(data.WheelAngle.ToString() +"deg");
     }
-
 }

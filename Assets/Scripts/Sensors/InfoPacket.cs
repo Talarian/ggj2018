@@ -11,6 +11,7 @@ public class InfoPacket : Sensor {
         InfoData data = new InfoData();
         data.MaxSpeed = controller.MaxSpeed;
         data.WheelAngle = controller.MaximumSteerAngle;
+        AddSensorData(data);
     }
 
     
