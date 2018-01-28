@@ -153,7 +153,7 @@ public class CommandParser : MonoBehaviour
 						textbox3.AddLine(helpStrings[9]);
 						textbox3.AddLine(helpStrings[10]);
                         textbox3.AddLine(helpStrings[11]);
-                    }
+					}
 					command.localOnly = true;
 				}
 				break;
@@ -308,10 +308,10 @@ public class CommandParser : MonoBehaviour
 		"rdr: Sends a radar ping from the Rover.",
 		"img2: A gyro stable camera.",
 		"sts: Requests a status update.",
+		"col: Collects nearby samples",
 		"help3 for more.",
 		"clr: Clears the console.",
         "reboot: Reboots the Rover application.",
-		"shtdwn: Quits the Rover application.",
-        "col: Collects nearby samples"
+		"shtdwn: Quits the Rover application."
 	};
 }
