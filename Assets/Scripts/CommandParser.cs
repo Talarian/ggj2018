@@ -57,11 +57,16 @@ public class CommandParser : MonoBehaviour
 		{
 			case "fwd":
 				command.commandType = Command.CommandType.Velocity;
-				command.commandValue = 1.0f;
+				if(!ParseSpeed(arguments, command)) {
+                    return "could not parse argument for fwd";
+                }
 				break;
 			case "rev":
 				command.commandType = Command.CommandType.Velocity;
-				command.commandValue = -1.0f;
+				if(!ParseSpeed(arguments, command)) {
+                    return "could not parse argument for rev";
+                }
+                command.commandValue *= -1;
 				break;
 			case "halt":
 				command.commandType = Command.CommandType.Velocity;
@@ -89,6 +94,10 @@ public class CommandParser : MonoBehaviour
 				command.commandType = Command.CommandType.Sensors;
 				command.commandValue = 3.0f;
 				break;
+            case "sts":
+                command.commandType = Command.CommandType.Sensors;
+                command.commandValue = 4.0f;
+                break;
 			default:
 				return "Could not parse command: " + argument;
 		}
@@ -101,7 +110,23 @@ public class CommandParser : MonoBehaviour
 		return null; // No errorcode
 	}
 
-	private bool ParseTurn(List<string>.Enumerator arguments, Command command)
+    private bool ParseSpeed(List<string>.Enumerator arguments, Command command) {
+        if (!arguments.MoveNext()) {
+            command.commandValue = 20.0f;
+            return true;
+        }
+
+        try {
+            float value = Int32.Parse(arguments.Current);
+            command.commandValue = value;
+        } catch (Exception e) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private bool ParseTurn(List<string>.Enumerator arguments, Command command)
 	{
 		command.commandType = Command.CommandType.Wheels;
 		if (!arguments.MoveNext())
@@ -110,20 +135,26 @@ public class CommandParser : MonoBehaviour
 		}
 		string commandValue = arguments.Current;
 
-		switch (commandValue)
-		{
-			case "lft":
-				command.commandValue = -1.0f;
-				break;
-			case "rgt":
-				command.commandValue = 1.0f;
-				break;
-			case "fwd":
-				command.commandValue = 0.0f;
-				break;
-			default:
-				return false;
-		}
+
+        try {
+            float value = Int32.Parse(commandValue);
+            command.commandValue = value;
+        } catch(Exception e) {
+            switch (commandValue) {
+                case "lft":
+                    command.commandValue = -25.0f;
+                    break;
+                case "rgt":
+                    command.commandValue = 25.0f;
+                    break;
+                case "fwd":
+                    command.commandValue = 0.0f;
+                    break;
+                default:
+                    return false;
+            }
+        }
+
 
 		return true;
 	}

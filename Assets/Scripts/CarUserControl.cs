@@ -31,9 +31,9 @@ namespace UnityStandardAssets.Vehicles.Car
 			carController.Move(carWheelDirection, carAcceleration, carAcceleration, 0f);
         }
 
-		public void Accelerate()
+		public void Accelerate(float speed)
 		{
-			carController.MaxSpeed = 20f;
+			carController.MaxSpeed = Mathf.Abs(speed);
 			carAcceleration = 1.0f;
 		}
 
@@ -43,21 +43,21 @@ namespace UnityStandardAssets.Vehicles.Car
 			carAcceleration = 0.0f;
 		}
 
-		public void Reverse()
+		public void Reverse(float speed)
 		{
-			carController.MaxSpeed = 20f;
+			carController.MaxSpeed = Mathf.Abs(speed);
 			carAcceleration = -1.0f;
 		}
 
-		public void WheelsLeft()
+		public void WheelsLeft(float angle)
 		{
-			carController.MaximumSteerAngle = 25.0f;
+			carController.MaximumSteerAngle = Mathf.Abs(angle);
 			carWheelDirection = -1.0f;
 		}
 
-		public void WheelsRight()
+		public void WheelsRight(float angle)
 		{
-			carController.MaximumSteerAngle = 25.0f;
+			carController.MaximumSteerAngle = Mathf.Abs(angle);
 			carWheelDirection = 1.0f;
 		}
 
@@ -96,11 +96,11 @@ namespace UnityStandardAssets.Vehicles.Car
 			}
 			else if (command.commandValue < 0.0f)
 			{
-				WheelsLeft();
+				WheelsLeft(command.commandValue);
 			}
 			else if (command.commandValue > 0.0f)
 			{
-				WheelsRight();
+				WheelsRight(command.commandValue);
 			}
 		}
 
@@ -112,11 +112,11 @@ namespace UnityStandardAssets.Vehicles.Car
 			}
 			else if (command.commandValue < 0.0f)
 			{
-				Reverse();
+				Reverse(command.commandValue);
 			}
 			else if (command.commandValue > 0.0f)
 			{
-				Accelerate();
+				Accelerate(command.commandValue);
 			}
 		}
 	}
