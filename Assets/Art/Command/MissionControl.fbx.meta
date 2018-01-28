@@ -1,0 +1,531 @@
+fileFormatVersion: 2
+guid: ab5a211bc15616643936c73a6741add1
+timeCreated: 1517103264
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: body
+    100002: body 1
+    100004: body 2
+    100006: body 3
+    100008: body 4
+    100010: body 5
+    100012: buttons
+    100014: buttons 1
+    100016: buttons 2
+    100018: buttons 3
+    100020: buttons 4
+    100022: buttons 5
+    100024: buttons1
+    100026: buttons1 1
+    100028: lights
+    100030: miConSign
+    100032: //RootNode
+    100034: monitor
+    100036: monitor 1
+    100038: monitor 2
+    100040: monitor 3
+    100042: monitor 4
+    100044: monitor 5
+    100046: nameplate
+    100048: panel1
+    100050: panel1 1
+    100052: panel1 2
+    100054: panel1 3
+    100056: panel1 4
+    100058: panel1 5
+    100060: panel2
+    100062: panel2 1
+    100064: panel2 2
+    100066: panel2 3
+    100068: panel2 4
+    100070: panel2 5
+    100072: panel3
+    100074: panel3 1
+    100076: panel3 2
+    100078: panel3 3
+    100080: panel3 4
+    100082: panel3 5
+    100084: panel4
+    100086: panel4 1
+    100088: panel4 2
+    100090: panel4 3
+    100092: panel4 4
+    100094: panel4 5
+    100096: panel5
+    100098: panel5 1
+    100100: panel5 2
+    100102: panel5 3
+    100104: panel5 4
+    100106: panel5 5
+    100108: panel6
+    100110: panel6 1
+    100112: panel6 2
+    100114: panel6 3
+    100116: panel6 4
+    100118: panel6 5
+    100120: projectorLeft1
+    100122: projectorMiddle1
+    100124: projectorRight1
+    100126: room
+    100128: screws
+    100130: screws 1
+    100132: screws 2
+    100134: screws 3
+    100136: screws 4
+    100138: screws 5
+    100140: terminal
+    100142: terminal1
+    100144: terminal2
+    100146: terminal3
+    100148: terminal4
+    100150: terminal5
+    400000: body
+    400002: body 1
+    400004: body 2
+    400006: body 3
+    400008: body 4
+    400010: body 5
+    400012: buttons
+    400014: buttons 1
+    400016: buttons 2
+    400018: buttons 3
+    400020: buttons 4
+    400022: buttons 5
+    400024: buttons1
+    400026: buttons1 1
+    400028: lights
+    400030: miConSign
+    400032: //RootNode
+    400034: monitor
+    400036: monitor 1
+    400038: monitor 2
+    400040: monitor 3
+    400042: monitor 4
+    400044: monitor 5
+    400046: nameplate
+    400048: panel1
+    400050: panel1 1
+    400052: panel1 2
+    400054: panel1 3
+    400056: panel1 4
+    400058: panel1 5
+    400060: panel2
+    400062: panel2 1
+    400064: panel2 2
+    400066: panel2 3
+    400068: panel2 4
+    400070: panel2 5
+    400072: panel3
+    400074: panel3 1
+    400076: panel3 2
+    400078: panel3 3
+    400080: panel3 4
+    400082: panel3 5
+    400084: panel4
+    400086: panel4 1
+    400088: panel4 2
+    400090: panel4 3
+    400092: panel4 4
+    400094: panel4 5
+    400096: panel5
+    400098: panel5 1
+    400100: panel5 2
+    400102: panel5 3
+    400104: panel5 4
+    400106: panel5 5
+    400108: panel6
+    400110: panel6 1
+    400112: panel6 2
+    400114: panel6 3
+    400116: panel6 4
+    400118: panel6 5
+    400120: projectorLeft1
+    400122: projectorMiddle1
+    400124: projectorRight1
+    400126: room
+    400128: screws
+    400130: screws 1
+    400132: screws 2
+    400134: screws 3
+    400136: screws 4
+    400138: screws 5
+    400140: terminal
+    400142: terminal1
+    400144: terminal2
+    400146: terminal3
+    400148: terminal4
+    400150: terminal5
+    2100000: Plastic_Gray
+    2100002: Plastic_Red
+    2100004: blinn6
+    2100006: Plastic_Mustard
+    2100008: Wood_Gray
+    2100010: Glass_Monitor
+    2100012: Metal
+    2100014: PaintedMetal_Green
+    2100016: PaintedMetal_LightGreen
+    2100018: Wall_Dark
+    2100020: Walls_Light
+    2100022: Plastic_Nameplate
+    2100024: Plastic_MissionControl
+    2100026: Emissive_AreaLight
+    2300000: body
+    2300002: body 1
+    2300004: body 2
+    2300006: body 3
+    2300008: body 4
+    2300010: body 5
+    2300012: buttons
+    2300014: buttons 1
+    2300016: buttons 2
+    2300018: buttons 3
+    2300020: buttons 4
+    2300022: buttons 5
+    2300024: buttons1
+    2300026: buttons1 1
+    2300028: lights
+    2300030: miConSign
+    2300032: monitor
+    2300034: monitor 1
+    2300036: monitor 2
+    2300038: monitor 3
+    2300040: monitor 4
+    2300042: monitor 5
+    2300044: nameplate
+    2300046: panel1
+    2300048: panel1 1
+    2300050: panel1 2
+    2300052: panel1 3
+    2300054: panel1 4
+    2300056: panel1 5
+    2300058: panel2
+    2300060: panel2 1
+    2300062: panel2 2
+    2300064: panel2 3
+    2300066: panel2 4
+    2300068: panel2 5
+    2300070: panel3
+    2300072: panel3 1
+    2300074: panel3 2
+    2300076: panel3 3
+    2300078: panel3 4
+    2300080: panel3 5
+    2300082: panel4
+    2300084: panel4 1
+    2300086: panel4 2
+    2300088: panel4 3
+    2300090: panel4 4
+    2300092: panel4 5
+    2300094: panel5
+    2300096: panel5 1
+    2300098: panel5 2
+    2300100: panel5 3
+    2300102: panel5 4
+    2300104: panel5 5
+    2300106: panel6
+    2300108: panel6 1
+    2300110: panel6 2
+    2300112: panel6 3
+    2300114: panel6 4
+    2300116: panel6 5
+    2300118: projectorLeft1
+    2300120: projectorMiddle1
+    2300122: projectorRight1
+    2300124: room
+    2300126: screws
+    2300128: screws 1
+    2300130: screws 2
+    2300132: screws 3
+    2300134: screws 4
+    2300136: screws 5
+    3300000: body
+    3300002: body 1
+    3300004: body 2
+    3300006: body 3
+    3300008: body 4
+    3300010: body 5
+    3300012: buttons
+    3300014: buttons 1
+    3300016: buttons 2
+    3300018: buttons 3
+    3300020: buttons 4
+    3300022: buttons 5
+    3300024: buttons1
+    3300026: buttons1 1
+    3300028: lights
+    3300030: miConSign
+    3300032: monitor
+    3300034: monitor 1
+    3300036: monitor 2
+    3300038: monitor 3
+    3300040: monitor 4
+    3300042: monitor 5
+    3300044: nameplate
+    3300046: panel1
+    3300048: panel1 1
+    3300050: panel1 2
+    3300052: panel1 3
+    3300054: panel1 4
+    3300056: panel1 5
+    3300058: panel2
+    3300060: panel2 1
+    3300062: panel2 2
+    3300064: panel2 3
+    3300066: panel2 4
+    3300068: panel2 5
+    3300070: panel3
+    3300072: panel3 1
+    3300074: panel3 2
+    3300076: panel3 3
+    3300078: panel3 4
+    3300080: panel3 5
+    3300082: panel4
+    3300084: panel4 1
+    3300086: panel4 2
+    3300088: panel4 3
+    3300090: panel4 4
+    3300092: panel4 5
+    3300094: panel5
+    3300096: panel5 1
+    3300098: panel5 2
+    3300100: panel5 3
+    3300102: panel5 4
+    3300104: panel5 5
+    3300106: panel6
+    3300108: panel6 1
+    3300110: panel6 2
+    3300112: panel6 3
+    3300114: panel6 4
+    3300116: panel6 5
+    3300118: projectorLeft1
+    3300120: projectorMiddle1
+    3300122: projectorRight1
+    3300124: room
+    3300126: screws
+    3300128: screws 1
+    3300130: screws 2
+    3300132: screws 3
+    3300134: screws 4
+    3300136: screws 5
+    4300000: buttons
+    4300002: monitor
+    4300004: screws
+    4300006: body
+    4300008: panel6
+    4300010: panel5
+    4300012: panel4
+    4300014: panel3
+    4300016: panel2
+    4300018: panel1
+    4300020: buttons1
+    4300022: buttons
+    4300024: monitor
+    4300026: screws
+    4300028: body
+    4300030: panel6
+    4300032: panel5
+    4300034: panel4
+    4300036: panel3
+    4300038: panel2
+    4300040: panel1
+    4300042: buttons
+    4300044: monitor
+    4300046: screws
+    4300048: body
+    4300050: panel6
+    4300052: panel5
+    4300054: panel4
+    4300056: panel3
+    4300058: panel2
+    4300060: panel1
+    4300062: room
+    4300064: projectorRight1
+    4300066: projectorMiddle1
+    4300068: projectorLeft1
+    4300070: nameplate
+    4300072: miConSign
+    4300074: lights
+    4300076: buttons
+    4300078: monitor
+    4300080: screws
+    4300082: body
+    4300084: panel6
+    4300086: panel5
+    4300088: panel4
+    4300090: panel3
+    4300092: panel2
+    4300094: panel1
+    4300096: buttons
+    4300098: monitor
+    4300100: screws
+    4300102: body
+    4300104: panel6
+    4300106: panel5
+    4300108: panel4
+    4300110: panel3
+    4300112: panel2
+    4300114: panel1
+    4300116: buttons
+    4300118: monitor
+    4300120: screws
+    4300122: body
+    4300124: panel6
+    4300126: panel5
+    4300128: panel4
+    4300130: panel3
+    4300132: panel2
+    4300134: panel1
+    4300136: buttons1
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emissive_AreaLight
+    second: {fileID: 2100000, guid: c61e471b04d08ec45b09fbad1253e2d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_Monitor
+    second: {fileID: 2100000, guid: bfabc6a22fca27f4d86834a4b09fd5a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: e19bff4a1a4f80b4e8ea33f486c0a864, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PaintedMetal_Green
+    second: {fileID: 2100000, guid: 8d46ab8c55fe6274b99ef9fb523ad265, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PaintedMetal_LightGreen
+    second: {fileID: 2100000, guid: ea60f0ec6ad0701448281162ea1213e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic_Gray
+    second: {fileID: 2100000, guid: d2735ee427c31d3458a13b35353b4eec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic_MissionControl
+    second: {fileID: 2100000, guid: f6cf3ee5d4b756e47a1f93f09f7935fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic_Mustard
+    second: {fileID: 2100000, guid: cff76e6dabe462a49b28336a7815b01b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic_Nameplate
+    second: {fileID: 2100000, guid: 7e15249d2e72fd14ba9098313b9d170a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic_Red
+    second: {fileID: 2100000, guid: 8ed436df2341bca4a906988962fed6e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_Dark
+    second: {fileID: 2100000, guid: 304ccf25b9c269648a6b0b0b17d24ff1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls_Light
+    second: {fileID: 2100000, guid: 9de25f8510e37ce4381790680874a20e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_Gray
+    second: {fileID: 2100000, guid: b81bce110a39738499770ce469192321, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn6
+    second: {fileID: 2100000, guid: d42b51b179a6f82489a07a85da4503ac, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
