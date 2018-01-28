@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CommandInputField : MonoBehaviour
 {
-	private InputField inputField;
+	private TMP_InputField inputField;
 	private CommandParser commandParser;
 
 	private void Start()
 	{
-		inputField = GetComponent<InputField>();
+		inputField = GetComponent<TMP_InputField>();
 		if (inputField == null)
 		{
 			Debug.LogError("CommandInputField needs to be on the same objects as an InputField");
