@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8989b3aebfc5845418c0f76e6b9e9a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinScreen: {fileID: 0}
 --- !u!114 &114708634401301298
 MonoBehaviour:
   m_ObjectHideFlags: 1
