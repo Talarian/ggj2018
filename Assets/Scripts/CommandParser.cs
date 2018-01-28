@@ -122,24 +122,12 @@ public class CommandParser : MonoBehaviour
 			case "shutdown":
 			case "quit":
 			case "shtdwn":
+				ShutdownController controller = FindObjectOfType<ShutdownController>();
+				if (controller != null)
 				{
-					ShutdownController controller = FindObjectOfType<ShutdownController>();
-					if (controller != null)
-					{
-						controller.Shutdown();
-					}
-					command.localOnly = true;
+					controller.Shutdown();
 				}
-				break;
-			case "reboot":
-				{
-					ShutdownController controller = FindObjectOfType<ShutdownController>();
-					if (controller != null)
-					{
-						controller.Reboot();
-					}
-					command.localOnly = true;
-				}
+				command.localOnly = true;
 				break;
 			case "help":
 				CommandOutputTextbox textbox2 = FindObjectOfType<CommandOutputTextbox>();
@@ -211,6 +199,27 @@ public class CommandParser : MonoBehaviour
 					command.localOnly = true;
 					break;
 				}
+            case "redrover": {
+                    CommandOutputTextbox textbox3 = FindObjectOfType<CommandOutputTextbox>();
+                    if (textbox3 != null) {
+                        textbox3.AddLine("Created at Vancouver GGJ 2018 by:");
+                        textbox3.AddLine("\t Joey Wiggs");
+                        textbox3.AddLine("\t Luke Schuster");
+                        textbox3.AddLine("\t Scott Penner");
+                        textbox3.AddLine("\t Tariq Vira");
+                    }
+                    command.localOnly = true;
+                    break;
+                }
+            case "hello": {
+                    CommandOutputTextbox textbox3 = FindObjectOfType<CommandOutputTextbox>();
+                    if (textbox3 != null) {
+                        textbox3.AddLine("Hi How are you?");
+                        textbox3.AddLine("\t It's cold here on mars.");
+                    }
+                    command.localOnly = true;
+                    break;
+                }
 			default:
 				return "Could not parse command: " + argument;
 		}
