@@ -6,6 +6,8 @@ using UnityStandardAssets.Vehicles.Car;
 
 public class CommandQueue : MonoBehaviour
 {
+	public event System.Action<Command> OnCommandQueued = delegate { };
+
 	[Serializable]
 	public class Configuration
 	{
@@ -45,6 +47,7 @@ public class CommandQueue : MonoBehaviour
 		foreach (Command command in newCommands)
 		{
 			waitingCommands.Enqueue(command);
+			OnCommandQueued(command);
 		}
 	}
 

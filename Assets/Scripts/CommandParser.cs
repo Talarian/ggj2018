@@ -33,7 +33,7 @@ public class CommandParser : MonoBehaviour
 			return CreateErrorString(command);
 		}
 
-		string errorCode = ParseArgument(result.GetEnumerator());
+		string errorCode = ParseArgument(result.GetEnumerator(), command);
 		if (!string.IsNullOrEmpty(errorCode))
 		{
 			OnCommandParseError(CreateErrorString(command));
@@ -43,7 +43,7 @@ public class CommandParser : MonoBehaviour
 		return "Command Transmitted: " + command;
 	}
 
-	private string ParseArgument(List<string>.Enumerator arguments)
+	private string ParseArgument(List<string>.Enumerator arguments, string originalString)
 	{
 		if (!arguments.MoveNext())
 		{
@@ -95,6 +95,7 @@ public class CommandParser : MonoBehaviour
 
 		// We've gotten this far, we have a valid command
 		command.timeStamp = DateTime.Now;
+		command.originalText = originalString;
 		waitingCommands.Enqueue(command);
 
 		return null; // No errorcode

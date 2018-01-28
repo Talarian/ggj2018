@@ -14,4 +14,5 @@ public class Command
 	public CommandType commandType;
 	public float commandValue;
 	public DateTime timeStamp;
+	public string originalText;
 }
