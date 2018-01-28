@@ -12,6 +12,7 @@ public class ShutdownController : MonoBehaviour
 	public Configuration configuration = new Configuration();
 
 	private bool shuttingDown = false;
+	private bool rebooting = false;
 	private float timeSinceShutdownRequest = 0f;
 
 	private void Update()
@@ -24,7 +25,14 @@ public class ShutdownController : MonoBehaviour
 		if (timeSinceShutdownRequest >= configuration.timeToShutdown)
 		{
 			Debug.Log("Shutting Down");
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Title");
+			if (rebooting)
+			{
+				UnityEngine.SceneManagement.SceneManager.LoadScene("Title");
+			}
+			else
+			{
+				Application.Quit();
+			}
 		}
 	}
 
@@ -41,5 +49,11 @@ public class ShutdownController : MonoBehaviour
             configuration.monitorUI.SetActive(false);
         }
         shuttingDown = true;
+	}
+
+	public void Reboot()
+	{
+		rebooting = true;
+		Shutdown();
 	}
 }
